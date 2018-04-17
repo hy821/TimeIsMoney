@@ -15,6 +15,7 @@
 		607FC0C92086049C00557ACF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0C82086049C00557ACF /* main.m */; };
 		607FC0D32086049D00557ACF /* KnowUTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0D22086049D00557ACF /* KnowUTests.m */; };
 		607FC0DE2086049D00557ACF /* KnowUUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0DD2086049D00557ACF /* KnowUUITests.m */; };
+		607FC0ED208623FE00557ACF /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607FC0EC208623FE00557ACF /* Speech.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		607FC0D92086049D00557ACF /* KnowUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnowUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FC0DD2086049D00557ACF /* KnowUUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnowUUITests.m; sourceTree = "<group>"; };
 		607FC0DF2086049D00557ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FC0EC208623FE00557ACF /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				607FC0ED208623FE00557ACF /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				607FC0D12086049D00557ACF /* KnowUTests */,
 				607FC0DC2086049D00557ACF /* KnowUUITests */,
 				607FC0B72086049B00557ACF /* Products */,
+				607FC0EB208623FD00557ACF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +134,14 @@
 				607FC0DF2086049D00557ACF /* Info.plist */,
 			);
 			path = KnowUUITests;
+			sourceTree = "<group>";
+		};
+		607FC0EB208623FD00557ACF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				607FC0EC208623FE00557ACF /* Speech.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SHNKV6SWUD;
 				INFOPLIST_FILE = KnowU/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PushAround.KnowU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SHNKV6SWUD;
 				INFOPLIST_FILE = KnowU/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PushAround.KnowU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
