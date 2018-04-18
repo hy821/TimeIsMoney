@@ -1,15 +1,15 @@
 //
-//  ViewController.m
+//  AudioToTextViewController.m
 //  KnowU
 //
-//  Created by young He on 2018/4/17.
+//  Created by young He on 2018/4/18.
 //  Copyright © 2018年 Hy. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "AudioToTextViewController.h"
 #import <Speech/Speech.h>
 
-@interface ViewController ()<SFSpeechRecognizerDelegate>
+@interface AudioToTextViewController ()<SFSpeechRecognizerDelegate>
 @property (nonatomic,weak) UIButton *btn;  //距离感应开关
 @property (nonatomic,weak) UILabel *stateLab;  //是否开启距离感应
 @property (weak, nonatomic)  UILabel *resultLab;  //转换结果呈现
@@ -27,7 +27,7 @@
 #define ScreenHeight          [[UIScreen mainScreen]bounds].size.height
 
 
-@implementation ViewController
+@implementation AudioToTextViewController
 
 //------Lasy------//
 - (AVAudioEngine *)audioEngine {
@@ -38,9 +38,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    
     [self createUI];
-  
+    
     //将设备识别语音设置为中文
     NSLocale *cale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh-CN"];
     self.recognizer = [[SFSpeechRecognizer alloc]initWithLocale:cale];
@@ -50,19 +50,19 @@
         switch (status) {
             case SFSpeechRecognizerAuthorizationStatusAuthorized:
                 NSLog(@"可以语音识别");
-//                self.resultLab.text = @"可以语音识别";
+                //                self.resultLab.text = @"可以语音识别";
                 break;
             case SFSpeechRecognizerAuthorizationStatusDenied:
                 NSLog(@"用户拒绝访问语音识别,请去设置");
-//                self.resultLab.text = @"用户拒绝访问语音识别,请去设置";
+                //                self.resultLab.text = @"用户拒绝访问语音识别,请去设置";
                 break;
             case SFSpeechRecognizerAuthorizationStatusRestricted:
                 NSLog(@"不能在该设备上进行语音识别");
-//                self.resultLab.text = @"不能在该设备上进行语音识别";
+                //                self.resultLab.text = @"不能在该设备上进行语音识别";
                 break;
             case SFSpeechRecognizerAuthorizationStatusNotDetermined:
                 NSLog(@"没有授权语音识别");
-//                self.resultLab.text = @"没有授权语音识别";
+                //                self.resultLab.text = @"没有授权语音识别";
                 break;
             default:
                 break;
@@ -135,11 +135,11 @@
     
     if ([UIDevice currentDevice].proximityState) {
         NSLog(@"有物品靠近");
-
+        
         if (![self.audioEngine isRunning]) {  //没有录制的话, 开始录制
             [self startRecording];
         }
-
+        
     } else {
         NSLog(@"有物品离开");
         if ([self.audioEngine isRunning]) {
@@ -199,9 +199,9 @@
 //设备是否可以使用, 状态发生改变时
 - (void)speechRecognizer:(SFSpeechRecognizer *)speechRecognizer availabilityDidChange:(BOOL)available{
     if (available) {
-
+        
     }else{
-
+        
     }
 }
 
@@ -213,5 +213,5 @@
     [super didReceiveMemoryWarning];
 }
 
-
 @end
+

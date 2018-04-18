@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  KnowU
+//
+//  Created by young He on 2018/4/18.
+//  Copyright © 2018年 Hy. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#import "Config.h"
+#import "Utils.h"
+#import "Helper.h"
+#import "NSObject+BaseObject.h"
+#import "UrlManager.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "UIView+Extension.h"
+#import "HudCenter.h"
+#import "WRNavigationBar.h"
+#import "CommonModel.h"
+
+#define MAS_SHORTHAND_GLOBALS
+#import <Masonry/Masonry.h>
+
+#ifdef DEBUG
+
+
+
+#else
+
+
+
+#endif
+
+
+#endif
+#endif /* PrefixHeader_pch */

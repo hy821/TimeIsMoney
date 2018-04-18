@@ -7,8 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		607FC0BB2086049B00557ACF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0BA2086049B00557ACF /* AppDelegate.m */; };
-		607FC0BE2086049B00557ACF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0BD2086049B00557ACF /* ViewController.m */; };
+		3A437F526FFF3700A60EF217 /* libPods-KnowU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC8D8EED356DBF7A5E4DB88 /* libPods-KnowU.a */; };
+		6076DF4A208765DC0075CA20 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF49208765DC0075CA20 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		6076DF4D208766350075CA20 /* NSObject+BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF4B208766340075CA20 /* NSObject+BaseObject.m */; };
+		6076DF502087670B0075CA20 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF4E2087670B0075CA20 /* UIView+Extension.m */; };
+		6076DF53208768BA0075CA20 /* HudCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF52208768BA0075CA20 /* HudCenter.m */; };
+		6076DF5C208768DD0075CA20 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF56208768DD0075CA20 /* MBProgressHUD+MJ.m */; };
+		6076DF5D208768DD0075CA20 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6076DF57208768DD0075CA20 /* MBProgressHUD.bundle */; };
+		6076DF5E208768DD0075CA20 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF59208768DD0075CA20 /* MBProgressHUD.m */; };
+		6076DF5F208768DD0075CA20 /* SNLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF5B208768DD0075CA20 /* SNLoading.m */; };
+		6076DF6220876D140075CA20 /* UIFont+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF6020876D140075CA20 /* UIFont+Extension.m */; };
+		6076DF6520876DDE0075CA20 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF6320876DDE0075CA20 /* Tool.m */; };
+		6076DF862087777C0075CA20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF7D2087777B0075CA20 /* MineViewController.m */; };
+		6076DF872087777C0075CA20 /* AudioToTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF822087777C0075CA20 /* AudioToTextViewController.m */; };
+		6076DF882087777C0075CA20 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF842087777C0075CA20 /* HomeViewController.m */; };
+		6076DF8B208777FF0075CA20 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF8A208777FF0075CA20 /* CommonModel.m */; };
+		6076DF8E208778310075CA20 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF8D208778310075CA20 /* HomeCell.m */; };
+		6076DF912087800C0075CA20 /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF902087800C0075CA20 /* UILabel+Category.m */; };
 		607FC0C12086049B00557ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FC0BF2086049B00557ACF /* Main.storyboard */; };
 		607FC0C32086049B00557ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FC0C22086049B00557ACF /* Assets.xcassets */; };
 		607FC0C62086049B00557ACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FC0C42086049B00557ACF /* LaunchScreen.storyboard */; };
@@ -16,6 +31,23 @@
 		607FC0D32086049D00557ACF /* KnowUTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0D22086049D00557ACF /* KnowUTests.m */; };
 		607FC0DE2086049D00557ACF /* KnowUUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0DD2086049D00557ACF /* KnowUUITests.m */; };
 		607FC0ED208623FE00557ACF /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607FC0EC208623FE00557ACF /* Speech.framework */; };
+		607FC0FC20871F8B00557ACF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0F520871F8B00557ACF /* AppDelegate.m */; };
+		607FC0FD20871F8B00557ACF /* CEBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC0F820871F8B00557ACF /* CEBaseWebViewController.m */; };
+		607FC10B20873C3000557ACF /* CEBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC10220873C3000557ACF /* CEBaseNavViewController.m */; };
+		607FC10C20873C3000557ACF /* CEBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC10320873C3000557ACF /* CEBaseViewController.m */; };
+		607FC10D20873C3000557ACF /* CETabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC10620873C3000557ACF /* CETabBar.m */; };
+		607FC10E20873C3000557ACF /* CETabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC10820873C3000557ACF /* CETabBarController.m */; };
+		607FC11120873DA900557ACF /* SSLayerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC10F20873DA900557ACF /* SSLayerAnimation.m */; };
+		607FC11520873DFD00557ACF /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC11420873DFD00557ACF /* Utils.m */; };
+		607FC1192087403B00557ACF /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC1182087403B00557ACF /* UIBarButtonItem+Extension.m */; };
+		607FC11C2087412400557ACF /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC11A2087412400557ACF /* UIImage+Extension.m */; };
+		607FC1282087416D00557ACF /* WRCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC11F2087416D00557ACF /* WRCustomNavigationBar.m */; };
+		607FC1292087416D00557ACF /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC1212087416D00557ACF /* WRNavigationBar.m */; };
+		607FC12A2087416D00557ACF /* YHWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC1242087416D00557ACF /* YHWebViewProgress.m */; };
+		607FC12B2087416D00557ACF /* YHWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC1262087416D00557ACF /* YHWebViewProgressView.m */; };
+		607FC12E2087504100557ACF /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC12D2087504100557ACF /* Helper.m */; };
+		607FC1312087558A00557ACF /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC12F2087558A00557ACF /* UIColor+Tools.m */; };
+		607FC1342087563200557ACF /* UIViewController+BarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC1322087563100557ACF /* UIViewController+BarButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +68,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6076DF47208761010075CA20 /* UrlManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UrlManager.h; sourceTree = "<group>"; };
+		6076DF48208765DC0075CA20 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		6076DF49208765DC0075CA20 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		6076DF4B208766340075CA20 /* NSObject+BaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BaseObject.m"; sourceTree = "<group>"; };
+		6076DF4C208766350075CA20 /* NSObject+BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BaseObject.h"; sourceTree = "<group>"; };
+		6076DF4E2087670B0075CA20 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		6076DF4F2087670B0075CA20 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		6076DF51208768BA0075CA20 /* HudCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudCenter.h; sourceTree = "<group>"; };
+		6076DF52208768BA0075CA20 /* HudCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudCenter.m; sourceTree = "<group>"; };
+		6076DF55208768DD0075CA20 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		6076DF56208768DD0075CA20 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		6076DF57208768DD0075CA20 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		6076DF58208768DD0075CA20 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		6076DF59208768DD0075CA20 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6076DF5A208768DD0075CA20 /* SNLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNLoading.h; sourceTree = "<group>"; };
+		6076DF5B208768DD0075CA20 /* SNLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLoading.m; sourceTree = "<group>"; };
+		6076DF6020876D140075CA20 /* UIFont+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Extension.m"; sourceTree = "<group>"; };
+		6076DF6120876D140075CA20 /* UIFont+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extension.h"; sourceTree = "<group>"; };
+		6076DF6320876DDE0075CA20 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		6076DF6420876DDE0075CA20 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		6076DF7C2087777B0075CA20 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		6076DF7D2087777B0075CA20 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		6076DF812087777C0075CA20 /* AudioToTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioToTextViewController.h; sourceTree = "<group>"; };
+		6076DF822087777C0075CA20 /* AudioToTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioToTextViewController.m; sourceTree = "<group>"; };
+		6076DF832087777C0075CA20 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		6076DF842087777C0075CA20 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		6076DF89208777FF0075CA20 /* CommonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
+		6076DF8A208777FF0075CA20 /* CommonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonModel.m; sourceTree = "<group>"; };
+		6076DF8C208778310075CA20 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		6076DF8D208778310075CA20 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		6076DF8F2087800C0075CA20 /* UILabel+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Category.h"; sourceTree = "<group>"; };
+		6076DF902087800C0075CA20 /* UILabel+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Category.m"; sourceTree = "<group>"; };
 		607FC0B62086049B00557ACF /* KnowU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowU.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FC0B92086049B00557ACF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		607FC0BA2086049B00557ACF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		607FC0BC2086049B00557ACF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		607FC0BD2086049B00557ACF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		607FC0C02086049B00557ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FC0C22086049B00557ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		607FC0C52086049B00557ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +113,46 @@
 		607FC0DD2086049D00557ACF /* KnowUUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnowUUITests.m; sourceTree = "<group>"; };
 		607FC0DF2086049D00557ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FC0EC208623FE00557ACF /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		607FC0F420871F8B00557ACF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		607FC0F520871F8B00557ACF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		607FC0F720871F8B00557ACF /* CEBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEBaseWebViewController.h; sourceTree = "<group>"; };
+		607FC0F820871F8B00557ACF /* CEBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEBaseWebViewController.m; sourceTree = "<group>"; };
+		607FC10220873C3000557ACF /* CEBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEBaseNavViewController.m; sourceTree = "<group>"; };
+		607FC10320873C3000557ACF /* CEBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEBaseViewController.m; sourceTree = "<group>"; };
+		607FC10520873C3000557ACF /* CETabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CETabBar.h; sourceTree = "<group>"; };
+		607FC10620873C3000557ACF /* CETabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CETabBar.m; sourceTree = "<group>"; };
+		607FC10720873C3000557ACF /* CETabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CETabBarController.h; sourceTree = "<group>"; };
+		607FC10820873C3000557ACF /* CETabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CETabBarController.m; sourceTree = "<group>"; };
+		607FC10920873C3000557ACF /* CEBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEBaseNavViewController.h; sourceTree = "<group>"; };
+		607FC10A20873C3000557ACF /* CEBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEBaseViewController.h; sourceTree = "<group>"; };
+		607FC10F20873DA900557ACF /* SSLayerAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLayerAnimation.m; sourceTree = "<group>"; };
+		607FC11020873DA900557ACF /* SSLayerAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLayerAnimation.h; sourceTree = "<group>"; };
+		607FC11220873DFD00557ACF /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		607FC11320873DFD00557ACF /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		607FC11420873DFD00557ACF /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		607FC11620873E3600557ACF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		607FC1172087403B00557ACF /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		607FC1182087403B00557ACF /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		607FC11A2087412400557ACF /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		607FC11B2087412400557ACF /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		607FC11E2087416D00557ACF /* WRCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCustomNavigationBar.h; sourceTree = "<group>"; };
+		607FC11F2087416D00557ACF /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCustomNavigationBar.m; sourceTree = "<group>"; };
+		607FC1202087416D00557ACF /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
+		607FC1212087416D00557ACF /* WRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationBar.m; sourceTree = "<group>"; };
+		607FC1232087416D00557ACF /* YHWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHWebViewProgress.h; sourceTree = "<group>"; };
+		607FC1242087416D00557ACF /* YHWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHWebViewProgress.m; sourceTree = "<group>"; };
+		607FC1252087416D00557ACF /* YHWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHWebViewProgressView.h; sourceTree = "<group>"; };
+		607FC1262087416D00557ACF /* YHWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHWebViewProgressView.m; sourceTree = "<group>"; };
+		607FC1272087416D00557ACF /* YHWebViewProgressViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHWebViewProgressViewProtocol.h; sourceTree = "<group>"; };
+		607FC12C2087504100557ACF /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		607FC12D2087504100557ACF /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		607FC12F2087558A00557ACF /* UIColor+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tools.m"; sourceTree = "<group>"; };
+		607FC1302087558A00557ACF /* UIColor+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tools.h"; sourceTree = "<group>"; };
+		607FC1322087563100557ACF /* UIViewController+BarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BarButton.m"; sourceTree = "<group>"; };
+		607FC1332087563200557ACF /* UIViewController+BarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BarButton.h"; sourceTree = "<group>"; };
+		BB49FAAFAA4ECFA810C4F4ED /* Pods-KnowU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowU.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowU/Pods-KnowU.release.xcconfig"; sourceTree = "<group>"; };
+		CAC8D8EED356DBF7A5E4DB88 /* libPods-KnowU.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnowU.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6216A12BBE5AE7F7B822091 /* Pods-KnowU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowU/Pods-KnowU.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FC0ED208623FE00557ACF /* Speech.framework in Frameworks */,
+				3A437F526FFF3700A60EF217 /* libPods-KnowU.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +182,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56A8C7C7689398CF8CF35B41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6216A12BBE5AE7F7B822091 /* Pods-KnowU.debug.xcconfig */,
+				BB49FAAFAA4ECFA810C4F4ED /* Pods-KnowU.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6076DF54208768DD0075CA20 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF55208768DD0075CA20 /* MBProgressHUD+MJ.h */,
+				6076DF56208768DD0075CA20 /* MBProgressHUD+MJ.m */,
+				6076DF57208768DD0075CA20 /* MBProgressHUD.bundle */,
+				6076DF58208768DD0075CA20 /* MBProgressHUD.h */,
+				6076DF59208768DD0075CA20 /* MBProgressHUD.m */,
+				6076DF5A208768DD0075CA20 /* SNLoading.h */,
+				6076DF5B208768DD0075CA20 /* SNLoading.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		6076DF7A2087777B0075CA20 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF7B2087777B0075CA20 /* Controller */,
+				6076DF7E2087777B0075CA20 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		6076DF7B2087777B0075CA20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF7C2087777B0075CA20 /* MineViewController.h */,
+				6076DF7D2087777B0075CA20 /* MineViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6076DF7E2087777B0075CA20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6076DF7F2087777C0075CA20 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF802087777C0075CA20 /* Controller */,
+				6076DF852087777C0075CA20 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6076DF802087777C0075CA20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF832087777C0075CA20 /* HomeViewController.h */,
+				6076DF842087777C0075CA20 /* HomeViewController.m */,
+				6076DF812087777C0075CA20 /* AudioToTextViewController.h */,
+				6076DF822087777C0075CA20 /* AudioToTextViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6076DF852087777C0075CA20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF8C208778310075CA20 /* HomeCell.h */,
+				6076DF8D208778310075CA20 /* HomeCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		607FC0AD2086049A00557ACF = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +267,7 @@
 				607FC0DC2086049D00557ACF /* KnowUUITests */,
 				607FC0B72086049B00557ACF /* Products */,
 				607FC0EB208623FD00557ACF /* Frameworks */,
+				56A8C7C7689398CF8CF35B41 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,15 +284,13 @@
 		607FC0B82086049B00557ACF /* KnowU */ = {
 			isa = PBXGroup;
 			children = (
-				607FC0B92086049B00557ACF /* AppDelegate.h */,
-				607FC0BA2086049B00557ACF /* AppDelegate.m */,
-				607FC0BC2086049B00557ACF /* ViewController.h */,
-				607FC0BD2086049B00557ACF /* ViewController.m */,
+				607FC0F220871F8B00557ACF /* Classes */,
 				607FC0BF2086049B00557ACF /* Main.storyboard */,
 				607FC0C22086049B00557ACF /* Assets.xcassets */,
 				607FC0C42086049B00557ACF /* LaunchScreen.storyboard */,
 				607FC0C72086049C00557ACF /* Info.plist */,
 				607FC0C82086049C00557ACF /* main.m */,
+				607FC11620873E3600557ACF /* PrefixHeader.pch */,
 			);
 			path = KnowU;
 			sourceTree = "<group>";
@@ -140,8 +317,144 @@
 			isa = PBXGroup;
 			children = (
 				607FC0EC208623FE00557ACF /* Speech.framework */,
+				CAC8D8EED356DBF7A5E4DB88 /* libPods-KnowU.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		607FC0F220871F8B00557ACF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				607FC0F320871F8B00557ACF /* Appdelegate */,
+				607FC0FE20871FCC00557ACF /* TabbarVC */,
+				607FC0F620871F8B00557ACF /* Base */,
+				607FC0F920871F8B00557ACF /* Category */,
+				607FC0FB20871F8B00557ACF /* Tool */,
+				607FC0FA20871F8B00557ACF /* ThirdParty */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		607FC0F320871F8B00557ACF /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				607FC0F420871F8B00557ACF /* AppDelegate.h */,
+				607FC0F520871F8B00557ACF /* AppDelegate.m */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
+		607FC0F620871F8B00557ACF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				607FC10920873C3000557ACF /* CEBaseNavViewController.h */,
+				607FC10220873C3000557ACF /* CEBaseNavViewController.m */,
+				607FC10A20873C3000557ACF /* CEBaseViewController.h */,
+				607FC10320873C3000557ACF /* CEBaseViewController.m */,
+				607FC10420873C3000557ACF /* CETabBarVC */,
+				607FC0F720871F8B00557ACF /* CEBaseWebViewController.h */,
+				607FC0F820871F8B00557ACF /* CEBaseWebViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		607FC0F920871F8B00557ACF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF8F2087800C0075CA20 /* UILabel+Category.h */,
+				6076DF902087800C0075CA20 /* UILabel+Category.m */,
+				6076DF6120876D140075CA20 /* UIFont+Extension.h */,
+				6076DF6020876D140075CA20 /* UIFont+Extension.m */,
+				6076DF4F2087670B0075CA20 /* UIView+Extension.h */,
+				6076DF4E2087670B0075CA20 /* UIView+Extension.m */,
+				6076DF4C208766350075CA20 /* NSObject+BaseObject.h */,
+				6076DF4B208766340075CA20 /* NSObject+BaseObject.m */,
+				6076DF48208765DC0075CA20 /* UINavigationController+FDFullscreenPopGesture.h */,
+				6076DF49208765DC0075CA20 /* UINavigationController+FDFullscreenPopGesture.m */,
+				607FC1332087563200557ACF /* UIViewController+BarButton.h */,
+				607FC1322087563100557ACF /* UIViewController+BarButton.m */,
+				607FC1302087558A00557ACF /* UIColor+Tools.h */,
+				607FC12F2087558A00557ACF /* UIColor+Tools.m */,
+				607FC11B2087412400557ACF /* UIImage+Extension.h */,
+				607FC11A2087412400557ACF /* UIImage+Extension.m */,
+				607FC1172087403B00557ACF /* UIBarButtonItem+Extension.h */,
+				607FC1182087403B00557ACF /* UIBarButtonItem+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		607FC0FA20871F8B00557ACF /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF54208768DD0075CA20 /* MBProgressHUD */,
+				607FC1222087416D00557ACF /* WebProgressView */,
+				607FC11D2087416D00557ACF /* WRNavigationBar */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		607FC0FB20871F8B00557ACF /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF89208777FF0075CA20 /* CommonModel.h */,
+				6076DF8A208777FF0075CA20 /* CommonModel.m */,
+				6076DF51208768BA0075CA20 /* HudCenter.h */,
+				6076DF6420876DDE0075CA20 /* Tool.h */,
+				6076DF6320876DDE0075CA20 /* Tool.m */,
+				6076DF52208768BA0075CA20 /* HudCenter.m */,
+				607FC12C2087504100557ACF /* Helper.h */,
+				607FC12D2087504100557ACF /* Helper.m */,
+				607FC11220873DFD00557ACF /* Config.h */,
+				6076DF47208761010075CA20 /* UrlManager.h */,
+				607FC11320873DFD00557ACF /* Utils.h */,
+				607FC11420873DFD00557ACF /* Utils.m */,
+				607FC11020873DA900557ACF /* SSLayerAnimation.h */,
+				607FC10F20873DA900557ACF /* SSLayerAnimation.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		607FC0FE20871FCC00557ACF /* TabbarVC */ = {
+			isa = PBXGroup;
+			children = (
+				6076DF7F2087777C0075CA20 /* Home */,
+				6076DF7A2087777B0075CA20 /* Mine */,
+			);
+			path = TabbarVC;
+			sourceTree = "<group>";
+		};
+		607FC10420873C3000557ACF /* CETabBarVC */ = {
+			isa = PBXGroup;
+			children = (
+				607FC10520873C3000557ACF /* CETabBar.h */,
+				607FC10620873C3000557ACF /* CETabBar.m */,
+				607FC10720873C3000557ACF /* CETabBarController.h */,
+				607FC10820873C3000557ACF /* CETabBarController.m */,
+			);
+			path = CETabBarVC;
+			sourceTree = "<group>";
+		};
+		607FC11D2087416D00557ACF /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				607FC11E2087416D00557ACF /* WRCustomNavigationBar.h */,
+				607FC11F2087416D00557ACF /* WRCustomNavigationBar.m */,
+				607FC1202087416D00557ACF /* WRNavigationBar.h */,
+				607FC1212087416D00557ACF /* WRNavigationBar.m */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		607FC1222087416D00557ACF /* WebProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				607FC1232087416D00557ACF /* YHWebViewProgress.h */,
+				607FC1242087416D00557ACF /* YHWebViewProgress.m */,
+				607FC1252087416D00557ACF /* YHWebViewProgressView.h */,
+				607FC1262087416D00557ACF /* YHWebViewProgressView.m */,
+				607FC1272087416D00557ACF /* YHWebViewProgressViewProtocol.h */,
+			);
+			path = WebProgressView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +464,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FC0E22086049D00557ACF /* Build configuration list for PBXNativeTarget "KnowU" */;
 			buildPhases = (
+				654B56564578A77F177CAA99 /* [CP] Check Pods Manifest.lock */,
 				607FC0B22086049B00557ACF /* Sources */,
 				607FC0B32086049B00557ACF /* Frameworks */,
 				607FC0B42086049B00557ACF /* Resources */,
+				5BCF3D2627D7B090FE6A0C51 /* [CP] Embed Pods Frameworks */,
+				6D66EAB6619ABEEAC927AE5D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FC0C62086049B00557ACF /* LaunchScreen.storyboard in Resources */,
+				6076DF5D208768DD0075CA20 /* MBProgressHUD.bundle in Resources */,
 				607FC0C32086049B00557ACF /* Assets.xcassets in Resources */,
 				607FC0C12086049B00557ACF /* Main.storyboard in Resources */,
 			);
@@ -272,14 +589,98 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BCF3D2627D7B090FE6A0C51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnowU/Pods-KnowU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		654B56564578A77F177CAA99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KnowU-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D66EAB6619ABEEAC927AE5D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KnowU/Pods-KnowU-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnowU/Pods-KnowU-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		607FC0B22086049B00557ACF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FC0BE2086049B00557ACF /* ViewController.m in Sources */,
+				607FC10D20873C3000557ACF /* CETabBar.m in Sources */,
+				607FC1282087416D00557ACF /* WRCustomNavigationBar.m in Sources */,
+				6076DF53208768BA0075CA20 /* HudCenter.m in Sources */,
+				6076DF5F208768DD0075CA20 /* SNLoading.m in Sources */,
+				6076DF502087670B0075CA20 /* UIView+Extension.m in Sources */,
+				607FC10B20873C3000557ACF /* CEBaseNavViewController.m in Sources */,
+				607FC1342087563200557ACF /* UIViewController+BarButton.m in Sources */,
+				6076DF4D208766350075CA20 /* NSObject+BaseObject.m in Sources */,
+				607FC0FD20871F8B00557ACF /* CEBaseWebViewController.m in Sources */,
+				607FC11C2087412400557ACF /* UIImage+Extension.m in Sources */,
+				607FC1312087558A00557ACF /* UIColor+Tools.m in Sources */,
+				607FC12E2087504100557ACF /* Helper.m in Sources */,
+				607FC11520873DFD00557ACF /* Utils.m in Sources */,
+				6076DF5C208768DD0075CA20 /* MBProgressHUD+MJ.m in Sources */,
+				6076DF8E208778310075CA20 /* HomeCell.m in Sources */,
+				607FC12A2087416D00557ACF /* YHWebViewProgress.m in Sources */,
+				6076DF862087777C0075CA20 /* MineViewController.m in Sources */,
+				6076DF4A208765DC0075CA20 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				607FC0C92086049C00557ACF /* main.m in Sources */,
-				607FC0BB2086049B00557ACF /* AppDelegate.m in Sources */,
+				6076DF8B208777FF0075CA20 /* CommonModel.m in Sources */,
+				607FC10C20873C3000557ACF /* CEBaseViewController.m in Sources */,
+				6076DF5E208768DD0075CA20 /* MBProgressHUD.m in Sources */,
+				607FC1192087403B00557ACF /* UIBarButtonItem+Extension.m in Sources */,
+				607FC1292087416D00557ACF /* WRNavigationBar.m in Sources */,
+				607FC12B2087416D00557ACF /* YHWebViewProgressView.m in Sources */,
+				6076DF882087777C0075CA20 /* HomeViewController.m in Sources */,
+				6076DF6520876DDE0075CA20 /* Tool.m in Sources */,
+				6076DF6220876D140075CA20 /* UIFont+Extension.m in Sources */,
+				607FC11120873DA900557ACF /* SSLayerAnimation.m in Sources */,
+				607FC0FC20871F8B00557ACF /* AppDelegate.m in Sources */,
+				607FC10E20873C3000557ACF /* CETabBarController.m in Sources */,
+				6076DF912087800C0075CA20 /* UILabel+Category.m in Sources */,
+				6076DF872087777C0075CA20 /* AudioToTextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,10 +841,12 @@
 		};
 		607FC0E32086049D00557ACF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6216A12BBE5AE7F7B822091 /* Pods-KnowU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SHNKV6SWUD;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KnowU/PrefixHeader.pch";
 				INFOPLIST_FILE = KnowU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -455,10 +858,12 @@
 		};
 		607FC0E42086049D00557ACF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB49FAAFAA4ECFA810C4F4ED /* Pods-KnowU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SHNKV6SWUD;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KnowU/PrefixHeader.pch";
 				INFOPLIST_FILE = KnowU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

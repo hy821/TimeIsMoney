@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CETabBarController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic,strong) CETabBarController * tabBarVC;
+- (void)restoreRootViewController:(UIViewController *)rootViewController;
 
 @end
 
