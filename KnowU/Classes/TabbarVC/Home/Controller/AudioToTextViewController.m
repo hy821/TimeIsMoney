@@ -8,6 +8,7 @@
 
 #import "AudioToTextViewController.h"
 #import <Speech/Speech.h>
+#import "CEBaseWebViewController.h"
 
 @interface AudioToTextViewController ()<SFSpeechRecognizerDelegate>
 @property (nonatomic,weak) UIButton *btn;  //距离感应开关
@@ -38,6 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"Guess The Image";
     
     [self createUI];
     
@@ -73,9 +75,21 @@
 - (void)createUI {
     self.view.backgroundColor = [UIColor lightGrayColor];
     
+    UILabel *stateLab = [[UILabel alloc]init];
+    stateLab.textColor = [UIColor blackColor];
+    stateLab.font =    [UIFont boldSystemFontOfSize:30];
+    stateLab.textAlignment = NSTextAlignmentCenter;
+    stateLab.text = @"距离感应: Off";
+    [self.view addSubview:stateLab];
+    self.stateLab = stateLab;
+    [self.stateLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset([self contentOffset]+100);
+        make.left.equalTo(self.view).offset(50);
+        make.right.equalTo(self.view).offset(-50);
+    }];
+    
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [btn setFrame:CGRectMake(0, 0, 150, 50)];
     btn.center = self.view.center;
     btn.layer.masksToBounds = YES;
     btn.layer.cornerRadius = 8;
@@ -87,27 +101,26 @@
     [btn setBackgroundColor:[UIColor brownColor]];
     [self.view addSubview:btn];
     self.btn = btn;
+    [self.btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.stateLab.mas_bottom).offset(80);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(150.f);
+        make.height.equalTo(50.f);
+    }];
     
-    UILabel *stateLab = [[UILabel alloc]initWithFrame:CGRectMake((ScreenWidth-300)/2, 200, 300, 60)];
-    stateLab.textColor = [UIColor blackColor];
-    stateLab.font =    [UIFont boldSystemFontOfSize:30];
-    stateLab.textAlignment = NSTextAlignmentCenter;
-    stateLab.text = @"距离感应: Off";
-    [self.view addSubview:stateLab];
-    self.stateLab = stateLab;
-    
-    UILabel *resultLab = [[UILabel alloc]initWithFrame:CGRectMake(10, ScreenHeight-300, ScreenWidth-20, 280)];
+    UILabel *resultLab = [[UILabel alloc]init];
     resultLab.numberOfLines = 0;
     resultLab.textColor = [UIColor blackColor];
     resultLab.font =    [UIFont boldSystemFontOfSize:15];
-    resultLab.textAlignment = NSTextAlignmentLeft;
+    resultLab.textAlignment = NSTextAlignmentCenter;
     resultLab.text = @"音频转文字结果: ";
     [self.view addSubview:resultLab];
     self.resultLab = resultLab;
-}
-
-#pragma mark - 开始录制
-- (void)startAudioRecord {
+    [self.resultLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(20.f);
+        make.right.equalTo(self.view).offset(-20.f);
+        make.top.equalTo(self.btn.mas_bottom).offset(80);
+    }];
     
 }
 
@@ -178,6 +191,11 @@
             NSString *resultStr = [[result bestTranscription] formattedString]; //语音转文本
             self.resultLab.text  = resultStr;
             isFinal = [result isFinal];
+            
+            CEBaseWebViewController *vc = [[CEBaseWebViewController alloc]init];
+            vc.webType = WKType;
+            vc.bannerUrl = @"http://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=狮子";
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if (error || isFinal) {
             [self.audioEngine stop];
