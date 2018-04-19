@@ -22,7 +22,7 @@ static NSString * const cellID = @"HomeCell";
 - (NSMutableArray<HomeCellModel*> *)dataArr {
     if  (!_dataArr) {
         _dataArr = [NSMutableArray array];
-        NSArray *nameArr = @[@"KnowU---Guess The Image",@"KnowU---Changed the living"];
+        NSArray *nameArr = @[@"Guess The Image",@"Guess The Song"];
         NSArray *vcNameArr = @[@"AudioToTextViewController",@"AudioToTextViewController"];
         for (int i = 0; i<nameArr.count; i++) {
             HomeCellModel *m = [[HomeCellModel alloc]init];
@@ -37,8 +37,8 @@ static NSString * const cellID = @"HomeCell";
     return self.dataArr.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     cell.model = self.dataArr[indexPath.row];
     return cell;
@@ -52,13 +52,10 @@ static NSString * const cellID = @"HomeCell";
 
 - (void)createUI {
     self.view.backgroundColor = LightGray_Color;
-    
     [self.view addSubview:self.mainTableView];
-    
     [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake([self contentOffset]+10, 0, 0, 0));
     }];
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
