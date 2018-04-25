@@ -7,12 +7,12 @@
 //
 
 #import "GuessTheImageViewController.h"
-#import <Speech/Speech.h>
 #import "CEBaseWebViewController.h"
 #import "BaseWebViewController.h"
 
-#import <CoreMotion/CoreMotion.h>
-
+#import <Speech/Speech.h>                     //声音录制转换文字
+#import <CoreMotion/CoreMotion.h>        //陀螺仪等
+#import <AudioToolbox/AudioToolbox.h>  //震动
 @interface GuessTheImageViewController ()<SFSpeechRecognizerDelegate>
 @property (nonatomic,weak) UILabel *stateLab;  //说明Lab
 @property (nonatomic,weak) UITextField *timeTF;  //输入自动结束时间
@@ -31,12 +31,12 @@
 @property (nonatomic, strong) CMMotionManager *motionManager;
 
 @property (nonatomic,assign) BOOL isJump;
-@property (nonatomic,assign) BOOL isStop;
+@property (nonatomic,assign) BOOL isStop;  //根据 设置的时间 结束录制
 @property (nonatomic,assign) NSInteger currentIndex;  //倒计时记录
 @property (nonatomic,assign) double lastZ_num;  //记录z轴转动, 得到是否触发
-
+@property (nonatomic,assign) NSInteger recordingTime;  //录制时间, 默认2秒, 2-5秒
+@property (nonatomic,copy) NSString *keyWord; //记录下来的搜索词语
 @property (nonatomic,assign) CurrentState btnState;
-
 @property (nonatomic,strong) NSTimer *timer;
 
 @end
@@ -64,7 +64,7 @@
         [_timeBtn setTitle:@"开始" forState:UIControlStateNormal];
         self.btnState = CurrentStateStart;
         [_timeBtn setTitleColor:[Utils colorConvertFromString:@"#933BFF"] forState:UIControlStateNormal];
-        [_timeBtn.titleLabel setFont: [UIFont boldSystemFontOfSize:18]];
+        [_timeBtn.titleLabel setFont: [UIFont boldSystemFontOfSize:16]];
         _timeBtn.layer.masksToBounds = YES;
         _timeBtn.layer.cornerRadius = 8;
         [_timeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -74,8 +74,26 @@
     }return _timeBtn;
 }
 
+#pragma mark - 结束编辑时, 更新录制时间
+- (void)updateRecordTime {
+    NSInteger duration = [self.timeTF.text integerValue];
+    if(duration>=2 && duration<=5) {
+        self.recordingTime = duration;
+    }else {
+        self.recordingTime = 2;
+        self.timeTF.text = [NSString stringWithFormat:@"%ld",(long)self.recordingTime];
+        SSTextHud(MainWindow, @"录制时间限制2~5秒");
+    }
+}
+
 #pragma mark - 点击开始, 倒计时三秒, 放手机.
 -(void)startAnimation:(UIButton*)sender {
+    
+    if (self.timeTF.isFirstResponder) {
+        [self.view endEditing:YES];
+        [self updateRecordTime];
+    }
+    
     if(self.btnState == CurrentStateStart) {
         [self timeStart];
     }
@@ -93,9 +111,60 @@
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
--(void)timeRun {
+#pragma mark - 录制开始倒计时 结束录制 跳转搜索页面
+- (void)startCountDownRecording {
+    if(self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    
+    if (self.btnState != CurrentStateRecording) {
+        return;
+    }
+    
+    self.currentIndex = self.recordingTime;
+    dispatch_async(dispatch_get_main_queue(), ^{
+          [self.timeBtn setTitle:[NSString stringWithFormat:@"%zd秒后录制结束",self.currentIndex] forState:UIControlStateNormal];
+    });
+    self.timer = [NSTimer timerWithTimeInterval:1.f target:self selector:@selector(timeRunWithRecord) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+}
+
+#pragma mark - 录制的倒计时
+- (void)timeRunWithRecord {
     if(self.currentIndex == 1) {
-        self.timeBtn.userInteractionEnabled = YES;
+        if(self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        self.btnState = CurrentStateEnd;
+//        self.timeBtn.userInteractionEnabled = YES;
+        [self.timeBtn setTitle:@"录制结束" forState:UIControlStateNormal];
+        
+        if ([self.audioEngine isRunning]) {
+            [self.audioEngine stop];
+            [self.recognitionRequest endAudio];
+        }
+        
+        //跳转搜索页面
+        if (self.keyWord.length>0) {
+            SSLog(@"--->>>跳转搜索页面KeyWord:%@",self.keyWord);
+            BaseWebViewController *vc = [[BaseWebViewController alloc]init];
+            NSString *imageUrlStr = [NSString stringWithFormat:@"https://image.baidu.com/search/index?tn=baiduimage&ie=utf-8&word=%@",self.keyWord];
+            NSString *encodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)imageUrlStr,(CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]",NULL,kCFStringEncodingUTF8));
+            vc.bannerUrl = encodedString;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        return;
+    }
+    self.currentIndex--;
+    [self.timeBtn setTitle:[NSString stringWithFormat:@"%zd秒后录制结束",self.currentIndex] forState:UIControlStateNormal];
+}
+
+#pragma mark - 点击开始的3秒倒计时
+- (void)timeRun {
+    if(self.currentIndex == 1) {
+//        self.timeBtn.userInteractionEnabled = NO;
         [self.timeBtn setTitle:@"等待触发" forState:UIControlStateNormal];
         
         if(self.timer) {
@@ -115,12 +184,17 @@
     [super viewWillAppear:animated];
     self.isJump = NO;
     self.isStop = NO;
+    self.btnState = CurrentStateStart;
+    [self.timeBtn setTitle:@"开始" forState:UIControlStateNormal];
+    self.resultLab.text = @"音频转文字结果: ";
+    self.keyWord = @"";
+    self.lastZ_num = 0;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Guess The Image";
-    
+    self.recordingTime = 2;
     [self createUI];
     
     //将设备识别语音设置为中文
@@ -149,46 +223,6 @@
             default:
                 break;
         }
-    }];
-  
-    
-    
-//    [self startRecordAccelerometer];
-//    [self startTLY];
-}
-
-#pragma mark - 启动加速计 开始收集数据
-- (void)startRecordAccelerometer {
-    // 1.判断加速计是否可用
-    if (!self.motionManager.isAccelerometerAvailable) {
-        NSLog(@"加速计不可用");
-        return;
-    }
-
-    //只获取一次
-    
-//    // 2.开始采样
-//    [self.motionManager startAccelerometerUpdates];
-//
-//    // 在需要的时候,主动获取.获取加速计信息
-//    CMAcceleration acceleration = self.motionManager.accelerometerData.acceleration;
-//    SSLog(@"-----x:%f ------y:%f ------z:%f", acceleration.x, acceleration.y, acceleration.z);
-    
-    
-    
-    //持续获取数据
-    
-    // 2.设置采样间隔
-    self.motionManager.accelerometerUpdateInterval = 1.0;
-    
-    // 3.开始采样
-    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-        if (error) return;
-        
-        // 获取加速计的信息
-        CMAcceleration acceleration = accelerometerData.acceleration;
-        SSLog(@"---x: %.2f ---y: %.2f ---z: %.2f", acceleration.x, acceleration.y, acceleration.z);
-        
     }];
     
 }
@@ -224,21 +258,20 @@
                  fabs(a)   处理double类型a的取绝对值
                  */
                 if (fabs(self.lastZ_num - gyroData.rotationRate.z)>2) {
-                    
                     [self.motionManager stopGyroUpdates];
-                    
-                    self.btnState = CurrentStateRecording;
-                    [self startRecording];
+                    if (![self.audioEngine isRunning]) {  //没有录制的话, 开始录制
+                        self.btnState = CurrentStateRecording;
+                        [self startRecording];
+                    }
                 }
-                
                 self.lastZ_num = gyroData.rotationRate.z;
-                
             }
             // 在主线程中更新gyroLabel的文本，显示绕各轴的转速
-            [self.resultLab performSelectorOnMainThread:@selector(setText:)withObject:labelText waitUntilDone:NO];
+//            [self.resultLab performSelectorOnMainThread:@selector(setText:)withObject:labelText waitUntilDone:NO];
         }];
     }else{
-        [self.resultLab performSelectorOnMainThread:@selector(setText:) withObject:@"该设备不支持获取陀螺仪数据！" waitUntilDone:NO];
+//        [self.resultLab performSelectorOnMainThread:@selector(setText:) withObject:@"该设备不支持获取陀螺仪数据！" waitUntilDone:NO];
+        SSTextHud(MainWindow, @"该设备不支持获取陀螺仪数据!");
     }
 }
 
@@ -301,69 +334,23 @@
     [self.timeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.resultLab.mas_bottom).offset(20);
         make.left.equalTo(self.stateLab);
-        make.width.equalTo(150.f);
-        make.height.equalTo(50.f);
+        make.width.equalTo(200.f);
+        make.height.equalTo(60.f);
     }];
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
+    [self updateRecordTime];
 }
 
-#pragma mark - 开启距离感应
-- (void)btnAction:(UIButton*)sender {
-    [self.view endEditing:YES];
-    
-    sender.selected = !sender.selected;
-    
-    if (sender.selected) {
-        if (![self.audioEngine isRunning]) {  //没有录制的话, 开始录制
-            [self startRecording];
-            
-        }
-        
-    } else {
-        if ([self.audioEngine isRunning]) {
-            [self.audioEngine stop];
-            [self.recognitionRequest endAudio];
-        }
-    }
-    
-}
-
-
-- (void)proximityStateDidChange {
-
-    if ([UIDevice currentDevice].proximityState) {
-        NSLog(@"有物品靠近");
-        
-        if (![self.audioEngine isRunning]) {  //没有录制的话, 开始录制
-            [self startRecording];
-            
-        }
-        
-    } else {
-        NSLog(@"有物品离开");
-        if ([self.audioEngine isRunning]) {
-            [self.audioEngine stop];
-            [self.recognitionRequest endAudio];
-        }
-    }
-}
-
-#pragma mark - 触发: 开始录制
+#pragma mark - 触发: 开始录制 转换文字
 - (void)startRecording {
-    
     self.isStop = NO;
-    
-    if(self.btnState == CurrentStateRecording) {
-        
-    }else {
+    if(self.btnState != CurrentStateRecording) {
         return;
     }
-    
     
     if (self.recognitionTask) {
         [self.recognitionTask cancel];
@@ -385,6 +372,12 @@
     
     self.recognitionRequest.shouldReportPartialResults = true;
     
+    //开始录制倒计时
+    [self startCountDownRecording];
+    
+    //震动提示
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
     //开始识别任务
     self.recognitionTask = [self.recognizer recognitionTaskWithRequest:self.recognitionRequest resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) {
         bool isFinal = false;
@@ -392,22 +385,13 @@
             NSString *keyWord = [[result bestTranscription] formattedString]; //语音转文本
             self.resultLab.text  = keyWord;
             isFinal = [result isFinal];
+            self.keyWord = keyWord;
+            SSLog(@"------->>>>KeyWord:%@",keyWord);
             
-            SSLog(@"---------------->>>>KeyWord:%@",keyWord);
-            
-            if (!self.isJump && self.isStop) {
-                self.isJump = YES;
-                SSLog(@"---------------->>>>KeyWord:%@",keyWord);
-                BaseWebViewController *vc = [[BaseWebViewController alloc]init];
-                NSString *imageUrlStr = [NSString stringWithFormat:@"https://image.baidu.com/search/index?tn=baiduimage&ie=utf-8&word=%@",keyWord];
-                NSString *encodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)imageUrlStr,(CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]",NULL,kCFStringEncodingUTF8));
-                vc.bannerUrl = encodedString;
-                [self.navigationController pushViewController:vc animated:YES];
-            }
         }
         
         if (error || isFinal) {
-            SSLog(@"---------------->>>>结束");
+            SSLog(@"------>>>>结束");
             [self.audioEngine stop];
             [inputNode removeTapOnBus:0];
             self.recognitionRequest = nil;

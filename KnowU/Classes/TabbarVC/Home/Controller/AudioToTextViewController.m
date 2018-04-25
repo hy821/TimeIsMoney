@@ -318,7 +318,6 @@
     [self removeTimer];
     [UIDevice currentDevice].proximityMonitoringEnabled = NO;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
