@@ -22,8 +22,8 @@ static NSString * const cellID = @"HomeCell";
 - (NSMutableArray<HomeCellModel*> *)dataArr {
     if  (!_dataArr) {
         _dataArr = [NSMutableArray array];
-        NSArray *nameArr = @[@"Guess The Image",@"Guess The Song"];
-        NSArray *vcNameArr = @[@"AudioToTextViewController",@"AudioToTextViewController"];
+        NSArray *nameArr = @[@"Guess The Image",@"Guess The Image 1"];
+        NSArray *vcNameArr = @[@"AudioToTextViewController",@"GuessTheImageViewController"];
         for (int i = 0; i<nameArr.count; i++) {
             HomeCellModel *m = [[HomeCellModel alloc]init];
             m.name = nameArr[i];

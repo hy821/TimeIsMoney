@@ -338,6 +338,18 @@ _Pragma("clang diagnostic pop")
 
 #define ShowFindBandCardAlert_Key @"ShowFindBandCardAlert_Key"
 
+
+typedef NS_ENUM(NSUInteger, WebType) {
+    /**
+     *  webview
+     */
+    NormalType       = 0,
+    /**
+     *  wkWebView
+     */
+    WKType             = 1,
+};
+
 #endif
 
 

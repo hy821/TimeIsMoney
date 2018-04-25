@@ -11,5 +11,4 @@
 
 #define WebHome_Url  @"https://www.baidu.com/"
 
-
 #endif /* UrlManager_h */

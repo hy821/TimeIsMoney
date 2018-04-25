@@ -24,6 +24,7 @@
 		6076DF8B208777FF0075CA20 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF8A208777FF0075CA20 /* CommonModel.m */; };
 		6076DF8E208778310075CA20 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF8D208778310075CA20 /* HomeCell.m */; };
 		6076DF912087800C0075CA20 /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF902087800C0075CA20 /* UILabel+Category.m */; };
+		6076DF942088702D0075CA20 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076DF932088702D0075CA20 /* BaseWebViewController.m */; };
 		607FC0C12086049B00557ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FC0BF2086049B00557ACF /* Main.storyboard */; };
 		607FC0C32086049B00557ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FC0C22086049B00557ACF /* Assets.xcassets */; };
 		607FC0C62086049B00557ACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FC0C42086049B00557ACF /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		607FC12E2087504100557ACF /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC12D2087504100557ACF /* Helper.m */; };
 		607FC1312087558A00557ACF /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC12F2087558A00557ACF /* UIColor+Tools.m */; };
 		607FC1342087563200557ACF /* UIViewController+BarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 607FC1322087563100557ACF /* UIViewController+BarButton.m */; };
+		60F1623620909455004B394E /* GuessTheImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F1623520909455004B394E /* GuessTheImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		6076DF8D208778310075CA20 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		6076DF8F2087800C0075CA20 /* UILabel+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Category.h"; sourceTree = "<group>"; };
 		6076DF902087800C0075CA20 /* UILabel+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Category.m"; sourceTree = "<group>"; };
+		6076DF922088702D0075CA20 /* BaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		6076DF932088702D0075CA20 /* BaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
 		607FC0B62086049B00557ACF /* KnowU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnowU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FC0C02086049B00557ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FC0C22086049B00557ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		607FC1302087558A00557ACF /* UIColor+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tools.h"; sourceTree = "<group>"; };
 		607FC1322087563100557ACF /* UIViewController+BarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BarButton.m"; sourceTree = "<group>"; };
 		607FC1332087563200557ACF /* UIViewController+BarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BarButton.h"; sourceTree = "<group>"; };
+		60F1623420909455004B394E /* GuessTheImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuessTheImageViewController.h; sourceTree = "<group>"; };
+		60F1623520909455004B394E /* GuessTheImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessTheImageViewController.m; sourceTree = "<group>"; };
 		BB49FAAFAA4ECFA810C4F4ED /* Pods-KnowU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowU.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnowU/Pods-KnowU.release.xcconfig"; sourceTree = "<group>"; };
 		CAC8D8EED356DBF7A5E4DB88 /* libPods-KnowU.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnowU.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6216A12BBE5AE7F7B822091 /* Pods-KnowU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnowU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnowU/Pods-KnowU.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +252,8 @@
 				6076DF842087777C0075CA20 /* HomeViewController.m */,
 				6076DF812087777C0075CA20 /* AudioToTextViewController.h */,
 				6076DF822087777C0075CA20 /* AudioToTextViewController.m */,
+				60F1623420909455004B394E /* GuessTheImageViewController.h */,
+				60F1623520909455004B394E /* GuessTheImageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,6 +362,8 @@
 				607FC10420873C3000557ACF /* CETabBarVC */,
 				607FC0F720871F8B00557ACF /* CEBaseWebViewController.h */,
 				607FC0F820871F8B00557ACF /* CEBaseWebViewController.m */,
+				6076DF922088702D0075CA20 /* BaseWebViewController.h */,
+				6076DF932088702D0075CA20 /* BaseWebViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -399,9 +409,9 @@
 				6076DF89208777FF0075CA20 /* CommonModel.h */,
 				6076DF8A208777FF0075CA20 /* CommonModel.m */,
 				6076DF51208768BA0075CA20 /* HudCenter.h */,
+				6076DF52208768BA0075CA20 /* HudCenter.m */,
 				6076DF6420876DDE0075CA20 /* Tool.h */,
 				6076DF6320876DDE0075CA20 /* Tool.m */,
-				6076DF52208768BA0075CA20 /* HudCenter.m */,
 				607FC12C2087504100557ACF /* Helper.h */,
 				607FC12D2087504100557ACF /* Helper.m */,
 				607FC11220873DFD00557ACF /* Config.h */,
@@ -468,6 +478,8 @@
 				607FC0B22086049B00557ACF /* Sources */,
 				607FC0B32086049B00557ACF /* Frameworks */,
 				607FC0B42086049B00557ACF /* Resources */,
+				A913BA54E65ED1F1F7912790 /* [CP] Embed Pods Frameworks */,
+				B20E72536BD1C8B07789A87E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -606,6 +618,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A913BA54E65ED1F1F7912790 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnowU/Pods-KnowU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B20E72536BD1C8B07789A87E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnowU/Pods-KnowU-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -617,6 +659,7 @@
 				607FC1282087416D00557ACF /* WRCustomNavigationBar.m in Sources */,
 				6076DF53208768BA0075CA20 /* HudCenter.m in Sources */,
 				6076DF5F208768DD0075CA20 /* SNLoading.m in Sources */,
+				60F1623620909455004B394E /* GuessTheImageViewController.m in Sources */,
 				6076DF502087670B0075CA20 /* UIView+Extension.m in Sources */,
 				607FC10B20873C3000557ACF /* CEBaseNavViewController.m in Sources */,
 				607FC1342087563200557ACF /* UIViewController+BarButton.m in Sources */,
@@ -643,6 +686,7 @@
 				6076DF6220876D140075CA20 /* UIFont+Extension.m in Sources */,
 				607FC11120873DA900557ACF /* SSLayerAnimation.m in Sources */,
 				607FC0FC20871F8B00557ACF /* AppDelegate.m in Sources */,
+				6076DF942088702D0075CA20 /* BaseWebViewController.m in Sources */,
 				607FC10E20873C3000557ACF /* CETabBarController.m in Sources */,
 				6076DF912087800C0075CA20 /* UILabel+Category.m in Sources */,
 				6076DF872087777C0075CA20 /* AudioToTextViewController.m in Sources */,
@@ -810,7 +854,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2VYH6ZS2F2;
+				DEVELOPMENT_TEAM = SHNKV6SWUD;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KnowU/PrefixHeader.pch";
 				INFOPLIST_FILE = KnowU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -827,7 +871,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2VYH6ZS2F2;
+				DEVELOPMENT_TEAM = SHNKV6SWUD;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KnowU/PrefixHeader.pch";
 				INFOPLIST_FILE = KnowU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
