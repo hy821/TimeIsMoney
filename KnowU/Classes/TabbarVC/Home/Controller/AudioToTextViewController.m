@@ -84,7 +84,7 @@
 }
 
 - (void)createUI {
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = ThemeColor;
     
     UILabel *stateLab = [[UILabel alloc]init];
     stateLab.textColor = [UIColor blackColor];

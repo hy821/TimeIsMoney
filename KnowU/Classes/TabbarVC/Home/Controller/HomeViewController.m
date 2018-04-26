@@ -51,7 +51,7 @@ static NSString * const cellID = @"HomeCell";
 }
 
 - (void)createUI {
-    self.view.backgroundColor = LightGray_Color;
+    self.view.backgroundColor = ThemeColor;
     [self.view addSubview:self.mainTableView];
     [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake([self contentOffset]+10, 0, 0, 0));
@@ -71,7 +71,7 @@ static NSString * const cellID = @"HomeCell";
         _mainTableView = [[UITableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
-        _mainTableView.backgroundColor = LightGray_Color;
+        _mainTableView.backgroundColor = ThemeColor;
         [_mainTableView registerClass:[HomeCell class] forCellReuseIdentifier:cellID];
         _mainTableView.rowHeight = 80.f;
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;

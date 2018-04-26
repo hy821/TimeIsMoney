@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.view.backgroundColor = White_Color;
     self.webType = WKType;
     
@@ -48,8 +48,8 @@
         [self.view bringSubviewToFront:self.backBtn];
     }
     
-    self.navigationItem.leftBarButtonItem = self.backItem;
-    
+//    self.navigationItem.leftBarButtonItem = self.backItem;
+    self.fd_interactivePopDisabled = NO;
     self.fd_prefersNavigationBarHidden = self.isNavBarHidden;
     
     self.webView = [[WKWebView alloc]init];
@@ -57,7 +57,7 @@
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
-        make.top.equalTo(self.view).offset([self contentOffset]);
+        make.top.equalTo(self.view).offset([self contentOffset]-44);
         make.bottom.equalTo(self.view);
     }];
     self.webView.UIDelegate = self;

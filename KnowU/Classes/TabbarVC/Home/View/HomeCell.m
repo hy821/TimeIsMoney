@@ -31,7 +31,7 @@
 }
 
 - (void)createUI {
-    self.contentView.backgroundColor = LightGray_Color;
+    self.contentView.backgroundColor = ThemeColor;
     UIView *bg = [[UIView alloc]init];
     bg.backgroundColor = White_Color;
     bg.layer.cornerRadius = 8.f;

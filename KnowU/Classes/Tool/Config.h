@@ -183,7 +183,7 @@ _Pragma("clang diagnostic pop")
 #define Green_Color           [UIColor greenColor]
 #define Gray_Color            [UIColor grayColor]
 #define Magenta_Color         [UIColor magentaColor]
-#define ThemeColor                    KCOLOR(@"#ffcc00")  //主题颜色
+#define ThemeColor                    KCOLOR(@"#53cac4")  //主题颜色
 
 
 /** 动态设定字体大小 */
